@@ -1,0 +1,318 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Roboto';
+}
+/* baner ze sliderem  */
+#banner{
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    color: white;
+    line-height: 50px;
+    text-align:center;
+}
+/* belka gornego menu */
+#meniu{
+    background-color: #333;
+    height: 50px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    
+    border-top:1px #666 solid;
+    border-bottom:1px #666 solid;
+    text-shadow: 4px 4px 6px #000000;
+}
+
+#content{
+    background-color: white;
+    width: 100%;
+    min-height: 80vh;
+    margin: 0 auto;
+}
+/* menu */
+#menu li{
+    list-style-type: none;
+    float: left;
+    border-right: 1px solid #666666;
+}
+
+#menu li:last-child{
+    border-right: none;
+}
+/* slider */
+@keyframes slider {
+
+    0% {
+        left: 0;
+    }
+    
+    20% {
+        left: 0;
+    }
+    
+    25% {
+        left: -100%;
+    }
+    
+    45% {
+        left: -100%;
+    
+    }
+    
+    50% {
+        left: -200%;
+    
+    }
+    
+    70% {
+        left: -200%;
+    }
+    
+    75% {
+        left: -300%;
+    }
+    
+    95% {
+        left: -300%;
+    }
+    
+    100% {
+        left: -400%;
+    
+    }
+    
+    }
+    
+    #slider {
+        overflow: hidden;
+    }
+    
+    #slider figure img {
+        width: 20%;
+        float: left;
+    }
+    
+    #slider figure {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        text-align: left;
+        font-size: 0;
+        animation: 20s slider infinite; 
+    
+    }
+
+    #slidertext{
+        position: absolute;
+        z-index: 10;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 9vw;
+        display: block;
+        width: 100%;
+
+        line-height: 100%;
+        font-weight: 300;
+        text-shadow: 3px 3px 3px #000000;
+        padding: 2vw;
+    }
+
+    /* koniec slidera */
+
+
+    /* poszczegolne elementy menu*/
+    #meniu ul li a{
+        display: inline-block;
+        text-decoration: none;
+        height: 50px;
+        font-family: 'Roboto', sans-serif ;
+        line-height: 50px;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0;
+        color: white;
+    }
+
+    #meniu ul li a:hover{
+        background-color: #555;
+    }
+
+    .active{
+        background-color: #555;
+    }
+
+
+    /* mapa */
+    .mapa{
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+
+    }
+    
+    
+
+
+    /* ikonka hamburgera*/
+	#burger{
+        position: relative;
+        top: 6px;
+        left: 15px;
+        display:none;
+
+        
+
+    }
+
+    #linia1{
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        z-index: 1;
+        position: absolute;
+        top: 8px;
+        border-radius: 20px;
+    }
+    #linia2{
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        z-index: 1;
+        position: absolute;
+        top: 19px;
+        border-radius: 20px;
+    }
+    #linia3{
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        z-index: 2;
+        position: absolute;
+        top: 30px;
+        border-radius: 20px;
+    }
+
+    #checkbox{ 
+        height: 40px;
+        width: 40px;
+        opacity: 0.0;
+        z-index: 100;
+        cursor: pointer;
+
+    }
+
+    #linie{
+        transition: all 0.6s ease;
+        height: 40px;
+        width: 40px;
+        position: relative;
+        top: -45px;
+        left: 0;
+        z-index: -1;
+    }
+
+    #checkbox:checked ~ #linie{
+        transform:rotate(135deg);
+    }
+
+
+    #checkbox:checked ~ #linie #linia1,
+    #checkbox:checked ~ #linie #linia3{
+        top: 18px;
+        transform: rotate(90deg);
+    }
+	/* responsywnosc blabla*/
+@media screen and (max-width:480px){
+    #burger{
+        display: block !important;
+
+    }
+
+    #menu{
+        display: none !important;
+    }
+}
+
+
+    /* menu rozwijane hamburgerem */
+    #popup {
+        position: absolute;
+        overflow: hidden;
+        top:45px;
+        left: -15px;
+        height: 100vh;
+        width: 100%;
+        line-height: 100%;
+        text-align: center;
+        background-color: rgba(102,102,102,0.9);
+        transition: all 0.5s ease;
+        transform: scale(0);
+        z-index: 1;
+        text-shadow: 4px 4px 6px #000000;
+    }
+
+    #checkbox:checked ~ #popup{
+        transform: scale(1);
+    }
+
+    #popup ol{
+        list-style-type: none;
+    }
+
+    #popup ol a{
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-family: 'Roboto';
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #popup ol a:hover{
+        background-color: #555;
+    }
+
+    #formularz{
+        height: 300px;
+        width: 200px;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    table{
+        width: 80%;
+        border-collapse: collapse; 
+        border:1px solid black;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+
+    }
+
+    #footer{
+        width: 100%;
+        height: 50px;
+        background-color: #333;
+        line-height: 50px;
+        text-align: center;
+        font-family: 'Roboto';
+        color: white;
+        text-shadow: 4px 4px 6px #000000;
+    }
+
+
+    
